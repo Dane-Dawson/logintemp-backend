@@ -16,8 +16,12 @@ class ApplicationController < ActionController::API
     # is authenticated by the JWT decoding authentication
     def decoded_token
       if auth_header
+        # label token from the header of the request, the first word will be Bearer by convention
+        # If you send in JUST the token as your Authorization you won't need the split
         token = auth_header.split(' ')[1]
         begin
+          # decode the token with your secret password/phrase
+          # 
           JWT.decode(token, "put your secret password here", true, algorithm: 'HS256')
         rescue JWT::DecodeError
           nil
@@ -28,6 +32,7 @@ class ApplicationController < ActionController::API
     # Used to find the current user if their token passes it's authentication
     def current_user
       if decoded_token
+        # Using the decoded token, grab the user_id stored within it and find a user
         user_id = decoded_token[0]['user_id']
         @user = User.find_by(id: user_id)
       end

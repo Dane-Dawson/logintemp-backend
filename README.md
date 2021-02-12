@@ -8,10 +8,18 @@ I HIGHLY ENCOURAGE not to clone this repo or directly copy and paste from it, bu
 
 For examples of how THIS repo does the following steps visit the related files in this repo for (maybe) more comments and (definitely) an example
 
+
+Installation guide
+
+bundle install
+rails db:create
+rails db:migrate
+rails s
+
+Noted below are the files to pay attention to with brief descriptions to what's needed in each
 Gemfile
 -add/uncomment bcrypt
 -add/uncomment jwt
-bundle install/update
 
 User model needs (at least) the following:
 -Schema must have name/email/some unique attribute to locate user in DB during login
@@ -23,6 +31,5 @@ User model needs (at least) the following:
 
 Routes
 -post "login" path to auth_controller "create" method
--delete "logout" path to auth_controller "destroy" method
 -get "logged_in?" path to application_controller "logged_in?" method
 
