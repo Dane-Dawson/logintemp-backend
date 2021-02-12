@@ -14,6 +14,7 @@ Installation guide
 bundle install
 rails db:create
 rails db:migrate
+rails db:seed
 rails s
 
 Noted below are the files to pay attention to with brief descriptions to what's needed in each
@@ -32,4 +33,15 @@ User model needs (at least) the following:
 Routes
 -post "login" path to auth_controller "create" method
 -get "logged_in?" path to application_controller "logged_in?" method
+
+"Thing" model
+-specify when auth is needed at the top of the controller
+
+Auth_controller
+-Ability to create a JWT token (with password verification in this template)
+-Declaration that you DO NOT need authentication to create a token
+
+Application_controller
+-Encoding and decoding of tokens
+-before action to trigger authentication check
 
