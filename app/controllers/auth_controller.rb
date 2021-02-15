@@ -1,5 +1,5 @@
 class AuthController < ApplicationController
-    skip_before_action :authorized, only: [:create]
+    skip_before_action :authorized, only: [:create, :auto_login]
     # ^ We are not requiring the Authorization header for the create method so a user can
     # create an account without being logged in. If you forget this you WILL RUN INTO ISSUES
     # Create in this context could also be called "log_in", but I am calling it "create"
@@ -26,6 +26,14 @@ class AuthController < ApplicationController
       # Vague error message for user security (never tell someone they got a specific input incorrect), adding a status code 
       render json: { message: 'Invalid username or password' }, status: :unauthorized
     end
+  end
+
+    # Created this method to allow logging in automatically 
+  def auto_login
+    @token = params[:token]
+    # byebug
+    user = User.find(JWT.decode(@token, "put your secret password here", true, algorithm: 'HS256')[0]["user_id"])
+    render json: user
   end
 
   private
