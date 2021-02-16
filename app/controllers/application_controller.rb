@@ -21,7 +21,7 @@ class ApplicationController < ActionController::API
         token = auth_header.split(' ')[1]
         begin
           # decode the token with your secret password/phrase
-          # This sequence is important to have add the true and, for now, this algorithm
+          # This sequence is important to have the true and, for now, this algorithm
           #   You can look into what they mean on your own, but just know they help JWT stuff work.
           JWT.decode(token, "put your secret password here", true, algorithm: 'HS256')
         rescue JWT::DecodeError
