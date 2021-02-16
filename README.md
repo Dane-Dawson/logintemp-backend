@@ -13,7 +13,7 @@ I HIGHLY ENCOURAGE not to just clone this repo and make your project off this as
 For examples of how THIS repo does the following steps visit the related files in this repo for (maybe) more comments and (definitely) an example
 
 
-Installation guide
+Installation guide. YOU MUST RUN THIS SERVER FOR THIS DEMO TO WORK
 ```
 bundle install
 rails db:create
@@ -29,7 +29,8 @@ gem install puma:4.3.3 -- --with-cflags="-Wno-error=implicit-function-declaratio
 ## Let's get to it
 ![Let's get to it](https://media.tenor.com/images/094986569421b4a0550d545698d48b01/tenor.gif)
 
-Noted below are the files to pay attention to with brief descriptions to what's needed in each one, but do take the time to really understand everything that is going on. There are a lot of moving parts and it can be difficult to tell exactly what is happening. Feel free to use byebug or other tools you are familiar with to track data flow and pick apart what is happening.</br><br/>
+Noted below are the files to pay attention to with brief descriptions to what's needed in each one, but do take the time to really understand everything that is going on. There are a lot of moving parts and it can be difficult to tell exactly what is happening. Feel free to use byebug or other tools you are familiar with to track data flow and pick apart what is happening. <br/> 
+To clarify, the things listed below have ALREADY been done on *this* repo, but are the things you should focus on for your project to add JWT!</br><br/>
 Gemfile
 * add/uncomment bcrypt
 * add/uncomment jwt
