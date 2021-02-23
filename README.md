@@ -8,7 +8,8 @@ This is a template to help you with AN approach (not the only or the best) for s
 
 https://github.com/Dane-Dawson/logintemp-frontend
 
-I HIGHLY ENCOURAGE not to just clone this repo and make your project off this as a base, or directly copy and paste from it. Rather you should write all your code yourself, even if you use this template as a direct inspiration. Besides the fact that writing it yourself helps you learn and understand it, sometimes there are some hidden character issues with copy pasting from the github pages that will give you very confusing errors.
+I HIGHLY ENCOURAGE not to just clone this repo and make your project off this as a base, or directly copy and paste from it. Rather you should write all your code yourself, even if you use this template as a direct inspiration. Besides the fact that writing it yourself helps you learn and understand it, sometimes there are some hidden character issues with copy pasting from the github pages that will give you very confusing errors. I have taken the time to make a copy of the authController and the ApplicationController without comments so you can see the code more cleanly too.
+
 <br/><br/>
 For examples of how THIS repo does the following steps visit the related files in this repo for (maybe) more comments and (definitely) an example
 
